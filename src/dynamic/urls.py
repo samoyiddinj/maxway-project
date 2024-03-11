@@ -24,5 +24,6 @@ urlpatterns = [
     path('', include('dynamic.product.urls')),
     path('', include('dynamic.order.urls')),
     path('', include('dynamic.branch.urls')),
-    path('', include('dynamic.user.urls'))
+    path('', include('dynamic.user.urls')),
+    path('', include('dynamic.bucket.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
