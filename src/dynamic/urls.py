@@ -22,8 +22,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dynamic.product.urls')),
-    path('', include('dynamic.order.urls')),
-    path('', include('dynamic.branch.urls')),
-    path('', include('dynamic.user.urls')),
-    path('', include('dynamic.bucket.urls'))
+    path('order/', include('dynamic.order.urls')),
+    path('branch/', include('dynamic.branch.urls')),
+    path('user/', include('dynamic.user.urls')),
+    path('bucket/', include('dynamic.bucket.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

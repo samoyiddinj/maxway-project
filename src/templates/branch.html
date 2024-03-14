@@ -1,10 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{#<head>#}
+{#    <style>#}
+{#        .container{#}
+{#            width: 100%;#}
+{#            min-height: 100vh;#}
+{#        }#}
+{#        .inner{#}
+{#            margin: auto;#}
+{#            width: 90%;#}
+{#            height: auto;#}
+{#            box-shadow: 0 0 5px hsl(0, 3%, 85%);#}
+{#            margin-top: 30px;#}
+{#            border-radius: 10px;#}
+{#        }#}
+{#        .main{#}
+{#            display: flex;#}
+{#            flex-wrap: wrap;#}
+{#            justify-content: space-between;#}
+{#            padding: 0 20px;#}
+{#        }#}
+{#        hr{#}
+{#            width: 97%;#}
+{#            border: 1px solid hsl(0, 3%, 85%);#}
+{##}
+{#        }#}
+{#        .time,.info{#}
+{#            display: flex;#}
+{#            justify-content: space-between;#}
+{#            padding: 0 20px;#}
+{#            margin: -13px 0;#}
+{#        }#}
+{#        .time{#}
+{#            color: rgb(146, 145, 145);#}
+{#            font-weight: 100;#}
+{#        }#}
+{#        .info{#}
+{#            margin-top: -35px;#}
+{#            margin-bottom: 10px;#}
+{#        }#}
+{#        .street{#}
+{#            margin: -15px 0 5px 0;#}
+{#            font-size: 1rem;#}
+{#        }#}
+{#        .filial{#}
+{#            position: relative;#}
+{#            margin-left: 75px;#}
+{#            font-weight: bold;#}
+{#            font-size: 2.5rem;#}
+{#        }#}
+{#        .name{#}
+{#            font-size: 1.5rem;#}
+{#        }#}
+{#        .worktime{#}
+{#            color: rgb(44, 208, 44);#}
+{#            font-size: 1.2rem;#}
+{#        }#}
+{#    </style>#}
+{#</head>#}
 <body>
+    <div class="container">
+        <h1 class="filial">Filiallar</h1>
+        {% for branch in branchs %}
+        <div class="inner">
+            <div class="main">
+                <div>
+                    <h1 class="name">{{ branch.name }}</h1>
+                    <p class="street">{{ branch.address_name }}</p>
+                </div>
 
+                <h2 class="worktime"> {{ branch.status }}</h2>
+            </div>
+            <hr>
+            <div class="information">
+                <div class="time">
+                    <h3>Ish vaqti:</h3>
+                    <h3>Telefon:</h3>
+                </div>
+                <div class="info">
+                    <h3>Du-Yak: {{ branch.work_time }}</h3>
+                    <h3>{{ branch.phone_number }}</h3>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
 </body>
-</html>
+
+
+{% endblock content %}
