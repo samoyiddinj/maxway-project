@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
+from . import models
 
 
 def order_product(request):
-    return HttpResponse("order")
+    return render(request, 'order.html', {})

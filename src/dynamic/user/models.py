@@ -30,8 +30,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    first_name = models.CharField(max_length=30, null=True, blank=False)
-    username = models.CharField(max_length=30, unique=True,  null=True, blank=False)
+    username = models.CharField(max_length=30, unique=True, null=True, blank=False)
     phone_number = models.CharField(max_length=13, null=False, blank=False)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -42,4 +41,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'username'
 
     def __str__(self):
-        return self.first_name
+        return self.username
