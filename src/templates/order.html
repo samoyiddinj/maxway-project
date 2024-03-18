@@ -54,8 +54,7 @@
             <div class="menu__ul">
                 <ul>
                     <li class="list"><a href="http://localhost:8000">Menyu </a></li>
-                    <li class="list"><a href="http://localhost:8000/order/">Bolalar uchun</a></li>
-                    <li class="list"><a href="">Filiallar</a></li>
+                    <li class="list"><a href="{% url 'branch' %}">Filiallar</a></li>
                 </ul>
                 <div class="phone--shop">
                     <div class="phone">
@@ -87,17 +86,16 @@
         </div>
         <div class="account">
             <div class="phone">
-                <p> ВЕРИФИКАЦИЯ ТЕЛЕФОНА*</p><br>
-                <input class="input" type="text" placeholder="Ваш номер">
+                <p> Telefon raqamni Tasdiqlash*</p><br>
+                <input class="input" type="text" placeholder="telefon raqam">
             </div>
             <div class="contact">
-                <p>КОНТАКТНАЯ ИНФОРМАЦИЯ</p><br>
-                <input class="input" type="text" placeholder="Имя*">
-                <input class="input" type="text" placeholder="Фамилия*">
+                <p>Kontakt ma'lumotlari</p><br>
+                <input class="input" type="text" placeholder="Ismingiz*">
             </div>
             <div class="all">
                 <div class="card">
-                    <p>СПОСОБЫ ОПЛАТЫ*</p>
+                    <p>To'lov turi*</p>
                     <div class="sum">
                         <h2> Наличный расчет </h2>
                         <h4>Оплата принимается в узбекских сумах в наших магазинах или курьеру при получении
@@ -106,7 +104,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <p>СПОСОБЫ ОПЛАТЫ*</p>
+                    <p>To'lov turi*</p>
                     <div class="sum">
                         <h2> Оплата по терминалу </h2>
                         <h4>Оплата принимается через банковские карты UzCard.</h4>
@@ -116,14 +114,14 @@
             </div>
 
             <div class="div">
-                <p>«Адрес, Ориентир»*</p>
+                <p>«Manzilingiz»*</p>
                 <textarea class="text" name="" id="" cols="30" rows="10"></textarea>
 
             </div>
         </div>
         <div class="gamburger">
             <div class="modal">
-                <div class="title">Заказы</div>
+                <div class="title">Buyurtma berish</div>
                 <button class="close" onclick="modal()"><span></span></button>
                 <div class="row">
                     <div class="col-12">
@@ -144,16 +142,16 @@
                     </div>
                 </div>
                 <div class="total">
-                    <div class="title">Итого:</div>
+                    <div class="title">Jami:</div>
                     <div class="cost">23,500 <span>UZS</span></div>
                 </div>
                 <div class="buttons">
-                    <button class="clear"><a href="http://localhost:8000/"> Очистить</a></button>
-                    <button class="order"><a href="http://localhost:8000/order/">Заказать</a></button>
+                    <button class="clear"><a href="http://localhost:8000/"> Tozalash</a></button>
+                    <button class="order"><a href="http://localhost:8000/order/">Buyurtma berish</a></button>
                 </div>
             </div>
             <div class="button">
-                <a type="submit" href="#">Отправить</a>
+                <a type="submit" href="{% url 'index' %}">Yuborish</a>
             </div>
         </div>
     </div>
